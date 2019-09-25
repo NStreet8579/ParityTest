@@ -1,6 +1,7 @@
 package com.nikhil.paritytest.ui.Deals;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
@@ -17,7 +18,7 @@ public class DealsActivity extends AppCompatActivity {
 
     ViewPager viewPager;
     TabLayout tabLayout;
-
+    Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +27,10 @@ public class DealsActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.deals_pager);
         tabLayout = findViewById(R.id.tab_deals);
+        mToolbar = findViewById(R.id.toolbar_deals);
+
+        mToolbar.setTitle("Deals");
+        setSupportActionBar(mToolbar);
 
         DealsFragmentAdapter adapter = new DealsFragmentAdapter(getSupportFragmentManager());
         adapter.addFragment(new TopDeals(), "Top");

@@ -43,4 +43,7 @@ dependencies {
 
     //ViewModel
     implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
+
+    //Paging Lib
+    implementation "android.arch.paging:runtime:1.0.1"
 }

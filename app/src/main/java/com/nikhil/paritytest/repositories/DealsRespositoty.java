@@ -1,4 +1,5 @@
-package com.nikhil.paritytest.respositories;
+/*
+package com.nikhil.paritytest.repositories;
 
 import com.nikhil.paritytest.networks.Response.DealResponse;
 import com.nikhil.paritytest.networks.RetrofitClient;
@@ -24,12 +25,10 @@ public class DealsRespositoty {
 
         final MutableLiveData<DealResponse> liveData = new MutableLiveData<>();
 
-        RetrofitInterface retrofitInterface = RetrofitClient.getClient().create(RetrofitInterface.class);
-        Call<DealResponse> call = retrofitInterface.callTopDeals(header);
+        Call<DealResponse> call = RetrofitClient.getInstance().getApi().callTopDeals(header);
         call.enqueue(new Callback<DealResponse>() {
             @Override
             public void onResponse(Call<DealResponse> call, Response<DealResponse> response) {
-
 
                 if (response.isSuccessful()){
                     liveData.setValue(response.body());
@@ -38,8 +37,6 @@ public class DealsRespositoty {
 
             @Override
             public void onFailure(Call<DealResponse> call, Throwable t) {
-
-
                 t.printStackTrace();
                 System.out.println(t.getMessage());
                 liveData.setValue(null);
@@ -52,8 +49,7 @@ public class DealsRespositoty {
 
         final MutableLiveData<DealResponse> liveData = new MutableLiveData<>();
 
-        RetrofitInterface retrofitInterface = RetrofitClient.getClient().create(RetrofitInterface.class);
-        Call<DealResponse> call = retrofitInterface.callPopularDeals(header);
+        Call<DealResponse> call = RetrofitClient.getInstance().getApi().callPopularDeals(header);
         call.enqueue(new Callback<DealResponse>() {
             @Override
             public void onResponse(Call<DealResponse> call, Response<DealResponse> response) {
@@ -80,8 +76,7 @@ public class DealsRespositoty {
 
         final MutableLiveData<DealResponse> liveData = new MutableLiveData<>();
 
-        RetrofitInterface retrofitInterface = RetrofitClient.getClient().create(RetrofitInterface.class);
-        Call<DealResponse> call = retrofitInterface.callFeaturedDeals(header);
+        Call<DealResponse> call = RetrofitClient.getInstance().getApi().callFeaturedDeals(header);
         call.enqueue(new Callback<DealResponse>() {
             @Override
             public void onResponse(Call<DealResponse> call, Response<DealResponse> response) {
@@ -105,3 +100,4 @@ public class DealsRespositoty {
     }
 
 }
+*/

@@ -5,16 +5,23 @@ import com.nikhil.paritytest.networks.Response.DealResponse;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.Query;
+import retrofit2.http.Url;
 
 public interface RetrofitInterface {
 
 
-    @GET("top.json")
-    Call<DealResponse> callTopDeals(@Header("X-Desidime-Client") String header);
+    @GET
+    Call<DealResponse> callDeals(@Url String url,
+                                    @Header("X-Desidime-Client") String header,
+                                    @Query("per_page")int perPage,
+                                    @Query("page")int pageNo);
 
-    @GET("popular.json")
+    @GET
     Call<DealResponse> callPopularDeals(@Header("X-Desidime-Client") String header);
 
-    @GET("featured.json")
-    Call<DealResponse> callFeaturedDeals(@Header("X-Desidime-Client") String header);
+    @GET
+    Call<DealResponse> callFeaturedDeals(@Header("X-Desidime-Client") String header,
+                                         @Query("per_page")int perPage,
+                                         @Query("page")int pageNo);
 }
